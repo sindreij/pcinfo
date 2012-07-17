@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>PC-INFO</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/smoothness/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+        <style type="text/css">
+          body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+        </style>
+        <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/underscore-min.js"></script>
+        <script src="/js/backbone-min.js"></script>
+        <script src="/js/socket.io.js"></script>
+        <script src="/js/client.js"></script>
+        <script src="/js/jquery-ui-1.8.21.custom.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <p>Din PC-info blir nå sendt til brukerstøtte. Det som blir sendt, er dette:</p>
+              <div class="data">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr class="header">
+                      <th>Nøkkel</th>
+                      <th>Verdi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <button class="btn" id="send">Send på nytt</button>
+            </div>
+          </div>
+        </div>
+        <script>
+        $(function() {
+          sendInfo();
+          $('button#send').click(function(ev) {
+            $('tbody tr').remove();
+            sendInfo();
+          });
+        });
+        </script>      
+    </body>
+</html>
